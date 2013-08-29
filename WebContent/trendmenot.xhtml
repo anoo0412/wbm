@@ -1,0 +1,114 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	<h:head>
+		<h:outputStylesheet library="css" name="trendmenot.css" />
+	</h:head>
+	<ui:define name="body">
+		<h:form prependId="false">
+			<p:outputLabel value="Welcome Sumatheja Dasararaju"
+				styleClass="nameCls" />
+			<p:fieldset legend="Facebook">
+				<h:panelGroup layout="block" styleClass="APIbody">
+					<h:panelGrid columns="3" style="width: 100%">
+						<p:graphicImage library="images" name="facebook.jpg" />
+						<h:panelGrid columns="2" style="color: black;">
+							<p:outputLabel value="Previous Employer:" />
+							<p:outputLabel value="Subex Ltd" />
+							<p:outputLabel value="Profile:" />
+							<p:outputLabel value="private" />
+						</h:panelGrid>
+						<h:panelGrid>
+							<p:outputLabel value="Facebook Profile health" styleClass="prfCls"/>
+						<p:meterGaugeChart value="#{trendMeNot.fmeterGaugeModel}"
+							 intervalOuterRadius="50"
+							seriesColors="E42217, FDD017, BCE954" />
+							</h:panelGrid>
+					</h:panelGrid>
+				</h:panelGroup>
+			</p:fieldset>
+
+			<p:fieldset legend="LinkedIn">
+
+				<h:panelGroup layout="block" styleClass="APIbody">
+					<h:panelGrid columns="3" style="width: 100%">
+							<p:graphicImage library="images" name="linkedin.jpg"
+								/>
+
+							<h:panelGrid columns="2" style="color: black;">
+								<p:outputLabel value="Profile Match" />
+								<p:outputLabel value="90%" />
+							</h:panelGrid>
+							<h:panelGrid>
+							<p:outputLabel value="LinkedIn Profile health" styleClass="prfCls"/>
+							<p:meterGaugeChart value="#{trendMeNot.lmeterGaugeModel}"
+								 intervalOuterRadius="50"
+								seriesColors="E42217, FDD017, BCE954" />
+							</h:panelGrid>
+						</h:panelGrid>
+				</h:panelGroup>
+			</p:fieldset>
+
+			<p:fieldset legend="Twitter">
+				<h:panelGroup layout="block" styleClass="APIbody">
+					<h:panelGrid columns="3" style="width: 100%">
+
+						<p:graphicImage library="images" name="twitter.jpg" />
+
+						<h:panelGrid columns="2" style="color: black; ">
+							<p:outputLabel value="Obscene word:" />
+							<p:outputLabel value="5%" />
+						</h:panelGrid>
+						<h:panelGrid>
+							<p:outputLabel value="Twitter profile health" styleClass="prfCls"/>
+						<p:meterGaugeChart value="#{trendMeNot.tmeterGaugeModel}"
+							 intervalOuterRadius="50"
+							seriesColors="E42217, FDD017, BCE954" />
+							</h:panelGrid>
+					</h:panelGrid>
+				</h:panelGroup>
+			</p:fieldset>
+
+			<p:fieldset legend="Google">
+			<h:panelGroup layout="block" styleClass="APIbody">
+				<h:panelGrid columns="3" style="width: 100%">
+					
+						<p:graphicImage library="images" name="google.jpg" />
+					
+					<h:panelGrid columns="2" style="color: black;">
+						<p:outputLabel value="Profile Match:" />
+						<p:outputLabel value="70%" />
+						<p:outputLabel value="Obscene result:" />
+						<p:outputLabel value="5%" />
+					</h:panelGrid>
+					<h:panelGrid>
+							<p:outputLabel value="Your Google search health" styleClass="prfCls"/>
+					<p:meterGaugeChart value="#{trendMeNot.gmeterGaugeModel}"
+						 intervalOuterRadius="50"
+						seriesColors="E42217, FDD017, #8AB722" />
+						</h:panelGrid>
+				</h:panelGrid>
+				</h:panelGroup>
+			</p:fieldset>
+		</h:form>
+
+		<style type="text/css">
+.APIbody {
+}
+
+.nameCls {
+	margin-left: 45%;
+	font-family: Gill Sans MT;
+	color: rgb(255, 215, 0);
+}
+.prfCls
+{
+	text-align: center; 
+	color: #FFD700; 
+	font-family: Gill Sans MT;
+}
+</style>
+	</ui:define>
+</ui:composition>

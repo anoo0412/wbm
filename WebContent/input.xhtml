@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>MIS510PRJ::MINE MY REP</title>
+	<meta name="keywords"
+		content="MIS510Prj, 510, web mining project, trend me not, Eller Web mining 510 porject" />
+	<meta name="description" content="MIS510Prj:: Trend Me Not" />
+	<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+
+	<link rel="stylesheet" href="nivo-slider.css" type="text/css"
+		media="screen" />
+	<f:metadata>
+		<f:event listener="#{trendMeNot.listAllCountries}"
+			type="preRenderView" />
+	</f:metadata>
+</h:head>
+<h:body>
+
+	<div id="templatemo_header_wrapper">
+		<div id="templatemo_header">
+
+			<div id="site_title" class="titleCls">
+				<span> <a href="#" title="MIS510Prj"> <img
+						src="images/MineMyRep_Roughs_DESIGN4wh.png" alt="MIS510Prj" />
+				</a>
+
+				</span>
+			</div>
+			<!-- end of site_title -->
+			<div id="social_box">
+				<!-- <a href="#"><img src="images/stumbleupon.png" alt="stumbleupon" /></a> -->
+				<!--<a href="#"><img src="images/digg.png" alt="digg" /></a> -->
+				<a href="http://www.facebook.com/minemyrep"><img
+					src="images/facebook.png" alt="MIS510Prj" /></a> <a href="#"><img
+					src="images/twitter.png" alt="MIS510Prj" /></a>
+				<!-- <a href="#"><img src="images/feed.png" alt="feed" /></a> -->
+			</div>
+
+			<div id="templatemo_menu">
+				<ul>
+					<li><a href="http://www.minemyrep.com/trend.xhtml">Home</a></li>
+					<li><a href="http://www.minemyrep.com/input.xhtml"
+						class="current">Mine me</a></li>
+					<li><a href="http://www.minemyrep.com/about.xhtml">About
+							Us</a></li>
+					<li><a href="http://www.minemyrep.com/contact.xhtml">Contact</a></li>
+				</ul>
+			</div>
+			<!-- end of templatemo_menu -->
+		</div>
+		<!-- end of header -->
+	</div>
+	<!-- end of header wrapper -->
+
+	<div id="templatemo_main_wrapper">
+
+		<h:form enctype="multipart/form-data" prependId="false">
+			<p:panel
+				style="font-family: Times New Roman; font-size: 15px; padding-left: 33%; padding-top: 5%;"
+				id="formBody">
+				<div class="headerCls">
+					<p:outputLabel value="Enter You Details" />
+				</div>
+				<p:panelGrid columns="2" styleClass="tableCls"
+					title="Enter your details">
+					<p:outputLabel value="First Name:" />
+					<p:inputText styleClass="inputCls"
+						value="#{trendMeNot.input.fName}" />
+					<p:outputLabel value="Last Name:" />
+					<p:inputText styleClass="inputCls"
+						value="#{trendMeNot.input.lName}" />
+					<p:outputLabel value="Email Id:" />
+					<p:inputText styleClass="inputCls"
+						value="#{trendMeNot.input.emailID}" />
+					<p:outputLabel value="Username:" />
+					<p:inputText styleClass="inputCls"
+						value="#{trendMeNot.input.userName}" />
+					<p:outputLabel value="Country:" />
+					<p:selectOneMenu value="#{trendMeNot.input.country}"
+						styleClass="inputCls" style="width:270px">
+						<f:selectItem itemValue="" itemLabel="--Select Country--"/>
+						<f:selectItems value="#{trendMeNot.countries}" />
+					</p:selectOneMenu>
+					<p:outputLabel value="State:" />
+					<p:inputText styleClass="inputCls"
+						value="#{trendMeNot.input.state}" />
+					<p:outputLabel value="City:" />
+					<p:inputText styleClass="inputCls" value="#{trendMeNot.input.city}" />
+					<p:outputLabel value="Twitter Username:" />
+					<p:inputText styleClass="inputCls"
+						value="#{trendMeNot.input.twitterRT}" />
+					<p:outputLabel value="LinkedIn public URL:" />
+					<h:panelGroup layout="block">
+						<p:inputText styleClass="inputCls"
+							value="#{trendMeNot.input.lURL}" />
+						<p:commandLink onclick="sample_linked.show();" type="button">
+							<p:graphicImage name="magni.png" library="images" />
+						</p:commandLink>
+						<p:dialog widgetVar="sample_linked" resizable="false"
+							appendToBody="true" modal="true" closeOnEscape="true">
+							<p:graphicImage library="images" name="linked_samp.jpg" />
+						</p:dialog>
+					</h:panelGroup>
+					<p:outputLabel value="Resume:" />
+					<h:inputTextarea styleClass="inputCls"
+						value="#{trendMeNot.input.resume}" style="resize:none" />
+
+
+				</p:panelGrid>
+				<div id="btnId" style="padding-left: 25%; padding-top: 2%;">
+					<p:commandButton value="MINE MY REP" styleClass="submit_btn"
+						id="submit_btn" action="#{trendMeNot.mineMe}"/>
+
+				</div>
+
+			</p:panel>
+			<p:blockUI block="formBody" trigger="submit_btn">
+
+				<p:outputLabel value="Please wait while we retrieve your details" style="font-size: 30px"/>
+				<br />
+				<p:graphicImage library="images" name="pleasewait.gif" />
+			</p:blockUI>
+		</h:form>
+	</div>
+
+	<!-- end of main wrapper -->
+
+	<div id="templatemo_footer_wrapper">
+		<div id="templatemo_footer">
+
+			<div class="footer_col_w300">
+				<h4>Our Pages</h4>
+				<ul class="tmo_list">
+					<li><a href="http://www.minemyrep.com/trend.xhtml">Home</a></li>
+					<li><a href="http://www.minemyrep.com/input.xhtml">Mine me</a></li>
+					<li><a href="http://www.minemyrep.com/about.xhtml">About
+							Us</a></li>
+					<li><a href="http://www.minemyrep.com/contact.xhtml">Contact</a></li>
+				</ul>
+			</div>
+
+			<div class="footer_col_w300">
+				<h4>Our Resources</h4>
+				<ul class="tmo_list">
+					<li>Alchemy</li>
+					<li>Facebook</li>
+					<li>Linkedin</li>
+					<li>Twitter</li>
+					<li>Pipl</li>
+					<li>Google Search</li>
+				</ul>
+			</div>
+
+			<div class="footer_col_w300 last">
+				<h4>About Us</h4>
+				<p>We are the Mine My Rep team, previously known as Trend Me
+					Not. We all had the privilege to study under Prof. Zhu Zhang, in
+					the Web Mining and Computing (MIS 510) course at Eller College of
+					Management, University of Arizona. This product is a fruit of this
+					course.</p>
+				<p>
+					Copyright © MIS510Prj <a href="http://www.minemyrep.com">Mine My Rep</a> <br /> Designed
+					by <a href="http://www.minemyrep.com">Mine My Rep</a>
+				</p>
+			</div>
+
+			<div class="cleaner"></div>
+		</div>
+		<!-- end of templatemo_footer -->
+	</div>
+	<!-- end of templatemo_footer wrapper -->
+
+</h:body>
+</html>

@@ -1,0 +1,115 @@
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile" contentType="text/html"
+	renderKitId="PRIMEFACES_MOBILE">
+
+	<pm:page title="MIS510Prj::Mine My Rep">
+
+		<!-- Main View -->
+		<pm:view id="main">
+			<pm:header title="Mine My Rep" swatch="b">
+			</pm:header>
+
+			<pm:content>
+
+				<p:dataList type="inset">
+					<f:facet name="header">Menu</f:facet>
+					<h:outputLink value="#forms">Home</h:outputLink>
+					<h:outputLink value="#buttons">Mine Me</h:outputLink>
+					<h:outputLink value="#lists">About Us</h:outputLink>
+					<h:outputLink value="#navbar">Contact Us</h:outputLink>
+				</p:dataList>
+				<div id="social_box">
+					<!-- <a href="#"><img src="images/stumbleupon.png" alt="stumbleupon" /></a> -->
+					<!--<a href="#"><img src="images/digg.png" alt="digg" /></a> -->
+					<a href="http://www.facebook.com/minemyrep"><img
+						src="images/facebook.png" alt="MIS510Prj" /></a> <a
+						href="http://www.twitter.com/minemyrep"><img
+						src="images/twitter.png" alt="MIS510Prj" /></a>
+					<!-- <a href="#"><img src="images/feed.png" alt="feed" /></a> -->
+				</div>
+
+				<div id="homepage_slider">
+					<div id="slider">
+						<a href="#" title="MIS510Prj"><img
+							src="images/slideshow/01.jpg" alt="MIS510Prj"
+							title="Achieve the career you have always dreamed about." /></a>
+					</div>
+					<div class="post_box_right">
+						<h2>Online Reputation Miner</h2>
+					</div>
+
+				</div>
+			</pm:content>
+
+		</pm:view>
+
+		<!-- Forms -->
+		<pm:view id="forms">
+			<pm:header title="Mine Me">
+				<f:facet name="left">
+				<pm:header title="NavBar">
+                <f:facet name="left"><p:button value="Back" icon="back" href="#main?reverse=true"/></f:facet>
+                <pm:navBar>
+                    <p:button value="Home" icon="home" href="#main?reverse=true" styleClass="ui-btn-active"/>
+                    <p:button value="Mine" icon="info" href="#main?reverse=true" />
+                    <p:button value="Search" icon="search" href="#main?reverse=true" />
+                </pm:navBar>
+            </pm:header>
+				</f:facet>
+			</pm:header>
+
+			<pm:content>
+				
+			</pm:content>
+
+		</pm:view>
+
+
+		<!-- Buttons -->
+		<pm:view id="buttons">
+			<pm:header title="Buttons">
+				<f:facet name="left">
+					<p:button value="Back" icon="back" href="#main?reverse=true" />
+				</f:facet>
+			</pm:header>
+
+			<pm:content>
+
+				<h3>Basic</h3>
+				<p:commandButton value="Default" type="button" />
+				<p:commandButton value="With Icon" type="button" icon="check" />
+				<p:commandButton value="Icon Position" type="button" icon="refresh"
+					iconPos="right" />
+				<p:commandButton value="Inline" type="button" icon="delete"
+					inline="true" />
+
+				<h3>Themes</h3>
+				<p:commandButton value="Default" type="button" swatch="a" />
+				<p:commandButton value="With Icon" type="button" icon="check"
+					swatch="b" />
+				<p:commandButton value="Icon Position" type="button" icon="refresh"
+					iconPos="right" swatch="e" />
+
+				<h3>Grouping</h3>
+				<pm:buttonGroup>
+					<p:commandButton value="Yes" type="button" icon="check" />
+					<p:commandButton value="No" type="button" icon="delete" />
+				</pm:buttonGroup>
+
+				<pm:buttonGroup orientation="horizontal">
+					<p:commandButton value="Yes" type="button" icon="check" />
+					<p:commandButton value="No" type="button" icon="delete" />
+				</pm:buttonGroup>
+
+			</pm:content>
+
+		</pm:view>
+
+		</pm:page>
+
+</f:view>
+
